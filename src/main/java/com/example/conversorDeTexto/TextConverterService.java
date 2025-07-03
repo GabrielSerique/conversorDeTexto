@@ -9,6 +9,7 @@ public class TextConverterService {
             case "upper"      -> text.toUpperCase();
             case "lower"      -> text.toLowerCase();
             case "capitalize" -> capitalizeWords(text);
+            case "removespaces" -> removeExtraSpaces(text);
             default           -> "Modo inválido";
         };
     }
@@ -25,5 +26,11 @@ public class TextConverterService {
         }
         return capitalized.toString().trim();
     }
+
+    private String removeExtraSpaces(String input) {
+    return input.trim().replaceAll("\\s+", " ");
+}
+
+    
 }
 
